@@ -1,0 +1,24 @@
+﻿@model DetailsCap
+
+<p>@Model.Book.Name</p>
+<p>Capitulo: @Model.Chapter.Number</p>
+@{
+    int chapter = 1;
+}
+
+    
+@foreach(var item in Model.Verses)
+{
+    <div>
+        <p>@item.Number - @item.Text</p>
+    </div>
+}
+<button>anterior</button>
+<button asp-action="NextChapter" asp-route-livro=@Model.Abbrev asp-route-chapter=@chapter>proximo</button>
+
+
+
+
+
+
+

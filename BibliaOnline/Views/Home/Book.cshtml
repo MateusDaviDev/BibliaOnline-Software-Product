@@ -1,0 +1,53 @@
+﻿@model DetailsCapModel
+
+
+@{
+    int capituloo = 1;
+
+    var capitulo2 = ViewBag.capitulos;
+
+    var livro = ViewBag.livro;
+
+    var capituloAtual = ViewBag.capitulo;
+}
+
+<h1>@Model.Book.Name - @capituloAtual</h1>
+
+<div class="container gap-4">
+    <div class="d-flex w-100 gap-3">
+
+        <div class="w-75">
+
+
+            @foreach (var item in Model.Verses)
+            {
+                <div>
+                    <p>@item.Number - @item.Text</p>
+                </div>
+            }
+           
+
+        </div>
+
+
+        <aside class="w-25">
+            <h3>@Model.Book.Name</h3>
+
+
+            <div class="d-grid row">
+                <div class="row">
+                    @for (var capitulo = 1; capitulo <= capitulo2; capitulo++)
+                    {
+                        <a class="p-2 text-decoration-none fw-bold text-center fs-4" style="width: 6rem;"
+                           asp-action="Book"
+                           asp-route-livro=@livro
+                           asp-route-capitulos=@capitulo2
+                           asp-route-capitulo=@capitulo>
+                            @capitulo
+                        </a>
+                    }
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>

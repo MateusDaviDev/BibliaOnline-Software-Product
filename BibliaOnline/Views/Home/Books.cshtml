@@ -1,0 +1,29 @@
+﻿@model IEnumerable<BookModel>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="card col-3  m-2" style="width: 18rem;">
+            @{
+                var capitulos = @item.Chapters;
+                var abbrevPt = @item.Abbrev.Pt;
+            }
+                
+            <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Autor: @item.Author</h6>
+                <p class="card-text">Capitulos: @item.Chapters</p>
+                <a class="card-link"  
+                   asp-route-capitulo="1"
+                   asp-route-livro=@item.Abbrev.Pt 
+                   asp-route-capitulos=@capitulos
+                   asp-controller="Home" asp-action="Book"> Acessar livro</a>
+                <p>@item.Abbrev.Pt</p>
+            </div>
+        </div>
+    }
+</div>
