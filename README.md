@@ -3,3 +3,7 @@ Segue o link da apresentação do projeto no youtube https://www.youtube.com/wat
 
 Foi utilizado o ASPNET MVC, HTTCLIENT E O NEWTON JSON SOFT.
 API UTILIZADA https://www.abibliadigital.com.br/
+
+
+AC 02 :
+Implementação do sistema de login utilizando o identity e criação do banco de dados
